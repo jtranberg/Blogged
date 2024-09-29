@@ -1,0 +1,65 @@
+/* General styles for visibility and layout */
+body{
+    background: #92cbf9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.my-posts-container {
+    color: #333; /* Dark font color for better readability */
+    font-family: Arial, sans-serif;
+    background: #92cbf9;
+ 
+    align-items: center;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 4rem;
+}
+
+.my-posts-header {
+   
+    color: #6f87f0;
+    font-size: 2rem;
+     margin: auto;
+}
+
+.my-posts-list {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+}
+
+.my-posts-list-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #ccfbff;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 800px;
+    background: #ccfbff;
+    box-shadow: 5px 5px 0 #288ff6;
+}
+
+.my-posts-title {
+    color: #246be6;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.my-posts-content {
+    color: #555;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.my-posts-date {
+    margin-top: 10px;
+    color: #888;
+}
+
+.my-posts-error {
+    color: red;
+    text-align: center;
+}

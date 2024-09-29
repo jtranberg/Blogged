@@ -9,12 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@netlify/plugin-nextjs": "^5.7.2",
+    "@thirdweb-dev/react": "^4.9.4",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "jsonwebtoken": "^9.0.2",
+    "jwt-decode": "^4.0.0",
+    "mongodb": "^6.9.0",
+    "mongoose": "^8.6.4",
     "next": "14.1.0",
     "react": "^18.3",
     "react-dom": "^18.3",
-    "thirdweb": "^5"
+    "thirdweb": "^5.59.0"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/jsonwebtoken": "^9.0.7",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  functions = "netlify/functions"  # Path to your Netlify serverless functions
+   publish = ".next"  # Netlify should automatically use this with the plugin
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[functions]
+  node_bundler = "esbuild"  # Ensure native modules are bundled correctly
