@@ -12,8 +12,8 @@ export default function HomePage() {
 
   return (
     <div className="mainDiv">
-      <h1 className="greeting">Welcome to the Home Page</h1>
-      <p className="openingParagraph">This is the main page of your application.</p>
+      <h1 className="greeting">Welcome to  Blogged</h1>
+      <p className="openingParagraph">Free speach ahead.</p>
       <button
         className="buttonMain"
         onClick={handleLoginRedirect} // Ensure event fires

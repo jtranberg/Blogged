@@ -8,38 +8,31 @@ export default function Header() {
   const [loading, setLoading] = useState(true); // Loading state to avoid premature redirects
   const [showAllPosts, setShowAllPosts] = useState(true); // Track whether to show all posts or user posts
   const [isLoggedIn, setIsLoggedIn] = useState(false); // State to track login status
+  const [menuOpen, setMenuOpen] = useState(false); // State to track if the menu is open (for mobile)
   const router = useRouter();
 
   // Check for token when component mounts
   useEffect(() => {
     const token = localStorage.getItem('token');
-    console.log("Token on mount: ", token); // Log the token for debugging
-
     if (token) {
       setIsLoggedIn(true);
     } else {
       setIsLoggedIn(false);
     }
-
     setLoading(false); // Loading is complete
   }, []); // Only run on mount
 
   // Function to toggle between all posts and user-specific posts
   const togglePosts = () => {
     const token = localStorage.getItem('token');
-    console.log("Token before toggling posts: ", token); // Log token before toggling
-
     if (!token) {
-      console.log("No token found. Redirecting to login...");
       router.push('/login');
       return;
     }
 
     if (showAllPosts) {
-      console.log("Navigating to user posts...");
       router.push('/my-posts');
     } else {
-      console.log("Navigating to all posts...");
       router.push('/blog');
     }
 
@@ -60,6 +53,11 @@ export default function Header() {
     router.push('/login'); // Redirect to login
   };
 
+  // Toggle the mobile menu
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen); // Toggle the state
+  };
+
   if (loading) {
     return <div>Loading...</div>; // Show loading state while checking for token
   }
@@ -69,7 +67,10 @@ export default function Header() {
       <div className="logo">
         <h1>My Blog</h1>
       </div>
-      <nav className="nav-container">
+      <div className={`hamburger ${menuOpen ? 'open' : ''}`} onClick={toggleMenu}>
+        <div className="hamburger-icon"></div>
+      </div>
+      <nav className={`nav-container ${menuOpen ? 'open' : ''}`}>
         {isLoggedIn ? (
           <>
             <button onClick={handleCreatePost} className="nav-btn">Create New Post</button>

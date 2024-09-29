@@ -1,33 +1,113 @@
+/* General styles for header */
 .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-  }
-  
-  .logo h1 {
-    margin: 0;
-    font-size: 24px;
-    color: #fff;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #04145a;
+  color: white;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 25px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger-icon, 
+.hamburger-icon::before, 
+.hamburger-icon::after {
+  content: '';
+  position: absolute;
+  background-color: white;
+  height: 3px;
+  width: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger-icon::before {
+  transform: translateY(-10px);
+}
+
+.hamburger-icon::after {
+  transform: translateY(10px);
+}
+
+.hamburger.open .hamburger-icon {
+  background-color: transparent; /* Hide middle line */
+}
+
+.hamburger.open .hamburger-icon::before {
+  transform: rotate(45deg) translate(5px, -5px); /* Rotate top line to form X */
+}
+
+.hamburger.open .hamburger-icon::after {
+  transform: rotate(-45deg) translate(5px, 5px); /* Rotate bottom line to form X */
+}
+
+/* Navigation styles */
+.nav-container {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-container.open {
+  display: block;
+}
+
+/* Nav Buttons */
+.nav-btn {
+  background-color: #4263f7;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-btn:hover {
+  background-color: #f39c12;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
   .nav-container {
+    display: none;
+    flex-direction: column;
+    background-color: #4263f7;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .nav-container.open {
     display: flex;
-    gap: 10px;
   }
-  
+
+  .hamburger {
+    display: flex;
+  }
+
   .nav-btn {
-    background-color: #555;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
+    margin: 10px 0;
   }
-  
-  .nav-btn:hover {
-    background-color: #777;
-  }
-  
+}
