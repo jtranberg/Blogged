@@ -1,0 +1,39 @@
+/* Style for the ConnectWallet button */
+.connect-wallet-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    background: #91b5f4;
+  }
+  
+
+  /* Hover and active states for the button */
+  .connect:hover {
+    background-color: #165eb5;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-1px);
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    color: #fff;
+  }
+  
+  .custom-wallet-btn:active {
+    transform: translateY(0);
+  }
+  
+  .connect-wallet-container .custom-wallet-btn span {
+    font-weight: bold;
+  }
+  
+  /* Responsive styling for smaller screens */
+  @media (max-width: 768px) {
+    .connect-wallet-container {
+      margin-top: 15px;
+    }
+  
+    .custom-wallet-btn {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+    }
+  }
+  
